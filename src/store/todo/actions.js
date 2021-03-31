@@ -7,3 +7,12 @@ export function addTask(context, payload) {
   }
   return false;
 }
+
+export function toggleCheck(context, payload) {
+  let index = context.state.todos.findIndex(x => x.title === payload);
+  context.commit("toggleCheckTask", index);
+}
+export function removeTask(context, payload) {
+  let index = context.state.todos.findIndex(x => x.title === payload);
+  context.commit("removeTask", index);
+}

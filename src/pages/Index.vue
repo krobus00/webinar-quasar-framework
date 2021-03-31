@@ -31,10 +31,11 @@
       </q-card>
     </q-dialog>
     <div class="q-pa-md" style="max-width: 350px">
-      <q-list bordered padding>
+      <q-list bordered padding v-if="getOnGoingTodo.length">
         <q-item-label header>Taks</q-item-label>
         <Item v-for="todo in getOnGoingTodo" :key="todo.title" v-bind="todo" />
       </q-list>
+      <h2 v-else>Empty</h2>
     </div>
     <q-page-sticky position="bottom-right" :offset="[18, 18]">
       <q-btn @click="modal = true" fab icon="add" color="accent" />
